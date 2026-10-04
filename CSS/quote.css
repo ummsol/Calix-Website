@@ -1,0 +1,364 @@
+body.quote-page,
+body.profile-page {
+    background: #f5f2ea;
+}
+
+.quote-page-main,
+.profile-page-main {
+    padding: 64px 0 80px;
+}
+
+.page-kicker {
+    margin-bottom: 10px;
+    color: #5f7887;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.page-heading {
+    margin: 0;
+    color: #30495a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400;
+}
+
+.page-intro {
+    max-width: 720px;
+    margin-top: 14px;
+    color: #6c777d;
+    line-height: 1.75;
+}
+
+.quote-shell-card,
+.account-card {
+    border: 1px solid #e1ddd5;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(48, 73, 90, 0.06);
+}
+
+.quote-shell-card { padding: 24px; }
+
+.quote-list-empty {
+    padding: 34px 20px;
+    border: 1px dashed #ccd5d9;
+    border-radius: 10px;
+    color: #6c777d;
+    text-align: center;
+}
+
+.quote-item {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: start;
+    padding: 16px 0;
+    border-bottom: 1px solid #ece8e1;
+}
+
+.quote-item:last-child { border-bottom: 0; }
+
+.quote-item-image {
+    width: 72px;
+    height: 72px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #eef1f2;
+}
+
+.quote-item-image img {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.quote-item h3 {
+    margin: 0 0 5px;
+    color: #30495a;
+    font-size: 16px;
+}
+
+.quote-item p {
+    margin: 0 0 5px;
+    color: #758087;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.quote-item-type {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #80939d;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.quote-remove {
+    border: 0;
+    background: transparent;
+    color: #7b5555;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.quote-summary-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #e6e1da;
+    color: #30495a;
+    font-weight: 700;
+}
+
+.quote-form-card h2,
+.quote-list-card h2,
+.account-card h2 {
+    margin-bottom: 20px;
+    color: #30495a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.form-section-title {
+    margin: 26px 0 14px;
+    color: #30495a;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.form-help {
+    color: #7a858b;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.permit-preview {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #eef4f5;
+    color: #40555f;
+    font-size: 12px;
+}
+
+.permit-preview.is-visible { display: block; }
+
+.btn-calix-action {
+    color: #ffffff;
+    background: #304d58;
+    border-color: #304d58;
+}
+
+.btn-calix-action:hover,
+.btn-calix-action:focus {
+    color: #ffffff;
+    background: #243b49;
+    border-color: #243b49;
+}
+
+.quote-success-reference {
+    padding: 12px;
+    border-radius: 8px;
+    background: #eef4f5;
+    color: #30495a;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-weight: 800;
+    text-align: center;
+}
+
+.account-card { padding: 24px; }
+
+.profile-avatar {
+    display: inline-flex;
+    width: 72px;
+    height: 72px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #30495a;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+}
+
+.profile-meta dt {
+    color: #7b878d;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.profile-meta dd {
+    margin-bottom: 14px;
+    color: #30495a;
+    font-size: 14px;
+}
+
+.history-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #ece8e1;
+}
+
+.history-item:last-child { border-bottom: 0; }
+
+.history-item strong { color: #30495a; }
+.history-item p { margin: 4px 0 0; color: #78848a; font-size: 12px; }
+
+@media (max-width: 767.98px) {
+    .quote-page-main,
+    .profile-page-main { padding: 44px 0 64px; }
+    .quote-shell-card,
+    .account-card { padding: 18px; }
+    .quote-item { grid-template-columns: 56px minmax(0, 1fr); }
+    .quote-item-image { width: 56px; height: 56px; }
+    .quote-item-actions { grid-column: 2; }
+}
+
+/* 3D-first quote list and clearer planning-price summary */
+.quote-item {
+    grid-template-columns: 96px minmax(0, 1fr) auto;
+    gap: 16px;
+    padding: 18px 0;
+}
+
+.quote-item-image {
+    position: relative;
+    width: 96px;
+    height: 82px;
+    border: 1px solid rgba(48, 73, 90, 0.08);
+    border-radius: 12px;
+    background: linear-gradient(180deg, #edf2f3, #e4ebed);
+}
+
+.quote-item-image img {
+    padding: 6px;
+}
+
+.quote-model-preview > span {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: 3px 6px;
+    border-radius: 999px;
+    background: rgba(48, 73, 90, 0.82);
+    color: #ffffff;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+}
+
+.quote-service-preview > span {
+    color: #6d808a;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.quote-item-summary {
+    max-width: 480px;
+}
+
+.quote-item-price {
+    margin-top: 8px !important;
+    color: #30495a !important;
+    font-size: 12px !important;
+}
+
+.quote-item-price strong {
+    color: #243b49;
+}
+
+.quote-reference-button {
+    min-height: 32px;
+    margin-top: 4px;
+    padding: 0 10px;
+    border: 1px solid rgba(48, 73, 90, 0.18);
+    border-radius: 999px;
+    background: #ffffff;
+    color: #526b77;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.quote-reference-button:hover,
+.quote-reference-button:focus-visible {
+    border-color: #30495a;
+    background: #eef4f5;
+    color: #30495a;
+}
+
+.quote-summary-bar {
+    align-items: flex-start;
+}
+
+.quote-summary-copy {
+    display: grid;
+    gap: 3px;
+}
+
+.quote-summary-copy > span {
+    color: #30495a;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.quote-summary-copy > small {
+    max-width: 330px;
+    color: #78858b;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.quote-summary-bar > strong {
+    flex: 0 0 auto;
+    color: #243b49;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+@media (max-width: 767.98px) {
+    .quote-item {
+        grid-template-columns: 76px minmax(0, 1fr);
+    }
+
+    .quote-item-image {
+        width: 76px;
+        height: 70px;
+    }
+
+    .quote-summary-bar {
+        flex-direction: column;
+    }
+}
+
+/* Profile transaction history actions */
+.history-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-actions .btn {
+    min-height: 34px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+}

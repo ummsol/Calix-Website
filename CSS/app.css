@@ -1,0 +1,154 @@
+/* CALIX shared interaction layer: quote state, account state, media and product specs */
+.calix-navbar .quote-nav-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+}
+
+.quote-separator {
+    color: rgba(48, 73, 90, 0.38);
+    font-weight: 500;
+}
+
+.quote-count {
+    min-width: 1ch;
+    color: #30495a;
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    text-align: center;
+}
+
+.calix-navbar .quote-nav-link.has-items .quote-count {
+    color: #203744;
+}
+
+.profile-nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600;
+}
+
+.calix-toast {
+    position: fixed;
+    z-index: 1090;
+    right: 20px;
+    bottom: 20px;
+    width: min(360px, calc(100% - 40px));
+}
+
+.calix-toast .toast {
+    border: 0;
+    box-shadow: 0 16px 40px rgba(28, 45, 54, 0.22);
+}
+
+/* Standard CALIX motion section used before every site footer */
+.product-video-section {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(64px, 7vw, 92px) 0;
+    background:
+        radial-gradient(circle at 82% 16%, rgba(255, 255, 255, 0.08), transparent 30%),
+        linear-gradient(135deg, #203744, #30495a 60%, #426271);
+    color: #ffffff;
+}
+
+.product-video-section .container {
+    max-width: 1240px;
+}
+
+.product-video-copy {
+    max-width: 520px;
+}
+
+.product-video-copy .section-kicker {
+    margin-bottom: 14px;
+    color: #eadcc9;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.product-video-copy h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(44px, 5.5vw, 72px);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.96;
+}
+
+.product-video-copy h2 em {
+    color: #eadcc9;
+    font-weight: 400;
+}
+
+.product-video-copy p:last-child {
+    max-width: 500px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.product-video-frame {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    background: #16252d;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.product-video-frame video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.quote-modal .modal-header,
+.service-quote-modal .modal-header {
+    border-bottom-color: #e7e2da;
+}
+
+.quote-modal .modal-title,
+.service-quote-modal .modal-title {
+    color: #30495a;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.quote-modal .form-label,
+.service-quote-modal .form-label {
+    color: #43545e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.quote-modal .form-control:focus,
+.quote-modal .form-select:focus,
+.service-quote-modal .form-control:focus,
+.service-quote-modal .form-select:focus {
+    border-color: #5f7887;
+    box-shadow: 0 0 0 0.2rem rgba(95, 120, 135, 0.14);
+}
+
+.product-meta-hint {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -6px 0 18px;
+}
+
+.product-meta-hint span {
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: #edf2f3;
+    color: #526772;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+@media (max-width: 767.98px) {
+    .product-video-section { padding: 56px 0; }
+    .calix-toast { right: 12px; bottom: 12px; width: calc(100% - 24px); }
+}

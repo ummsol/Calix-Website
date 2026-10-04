@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    color: #263b44;
+    background: #3e6371;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.login-shell {
+    background: #3e6371;
+}
+
+.auth-card {
+    max-width: 1180px;
+    min-height: 690px;
+    border-radius: 24px;
+}
+
+.min-vh-card,
+.login-panel {
+    min-height: 690px;
+}
+
+.brand-logo {
+    width: 300px;
+    max-height: 120px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.display-title {
+    color: #263b44;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.form-label {
+    margin-bottom: 8px;
+    color: #354d57;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-control {
+    min-height: 54px;
+    color: #263b44;
+    background: #ffffff;
+    border: 1px solid #d6e0e4;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.form-control::placeholder {
+    color: #a0adb3;
+}
+
+.form-control:focus {
+    border-color: #5f8795;
+    box-shadow: 0 0 0 4px rgba(95, 135, 149, 0.14);
+}
+
+.form-control.invalid {
+    border-color: #b42318;
+}
+
+.input-icon {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 17px;
+    color: #7d949e;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.password-eye {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    color: #78909a;
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    transform: translateY(-50%);
+}
+
+.password-eye:hover,
+.password-eye:focus {
+    color: #304d58;
+    background: #edf3f5;
+}
+
+.signup-link {
+    color: #416a79;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-link:hover,
+.signup-link:focus {
+    color: #263b44;
+    text-decoration: underline;
+}
+
+.error-message {
+    min-height: 18px;
+    color: #b42318;
+    font-size: 13px;
+}
+
+.register-form[hidden] {
+    display: none;
+}
+
+.btn-calix {
+    min-height: 54px;
+    color: #ffffff;
+    background: #304d58;
+    border: 1px solid #304d58;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.btn-calix:hover,
+.btn-calix:focus {
+    color: #ffffff;
+    background: #263b44;
+    border-color: #263b44;
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #dce5e9;
+}
+
+.divider small {
+    color: #8b9aa0;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.signup-copy {
+    color: #7b8b92;
+    font-size: 13px;
+}
+
+.footer-copy {
+    color: #9aa6ab;
+    font-size: 11px;
+}
+
+.visual-panel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #ffffff;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(38, 59, 68, 0.1) 0%,
+            rgba(38, 59, 68, 0.32) 55%,
+            rgba(38, 59, 68, 0.72) 100%
+        ),
+        url("../Assets/login-background.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.visual-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(48, 77, 88, 0.04),
+        rgba(48, 77, 88, 0.18)
+    );
+}
+
+.visual-kicker {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.visual-title {
+    max-width: 650px;
+    font-size: clamp(42px, 5vw, 66px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+}
+
+@media (max-width: 991.98px) {
+    .login-shell {
+        position: relative;
+        background-image:
+            linear-gradient(rgba(238, 243, 245, 0.78), rgba(238, 243, 245, 0.92)),
+            url("../Assets/login-background.png");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .auth-card {
+        max-width: 570px;
+        min-height: auto;
+        border-radius: 22px;
+    }
+
+    .min-vh-card,
+    .login-panel {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .login-shell {
+        padding: 0 !important;
+    }
+
+    .auth-card {
+        min-height: 100vh;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none !important;
+    }
+
+    .login-panel {
+        min-height: 100vh;
+        padding: 28px 22px !important;
+    }
+
+    .brand-row {
+        margin-bottom: 38px !important;
+    }
+
+    .brand-logo {
+        width: 155px;
+    }
+
+    .display-title {
+        font-size: 34px;
+    }
+}

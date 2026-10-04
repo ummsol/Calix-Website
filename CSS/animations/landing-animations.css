@@ -1,0 +1,97 @@
+.landing-opening {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: landingOpening 1.8s ease-out forwards;
+}
+
+.landing-text {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: landingText linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+.landing-card {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: landingCard linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+.landing-motion {
+    opacity: 0;
+    transform: translateY(80px) scale(0.97);
+    animation: landingMotion linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.landing-footer {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: landingFooter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes landingOpening {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes landingText {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes landingCard {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes landingMotion {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes landingFooter {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

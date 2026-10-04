@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>Transaction | Calix Glass and Aluminum Fabrication</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../CSS/landingpage.css" rel="stylesheet"/>
+        <link href="../CSS/products.css" rel="stylesheet"/>
+        <link href="../CSS/footer.css" rel="stylesheet"/>
+        <link href="../CSS/app.css" rel="stylesheet"/>
+        <link href="../CSS/quote.css" rel="stylesheet"/>
+        <link href="../CSS/transaction.css" rel="stylesheet"/>
+        <link href="../CSS/ux.css" rel="stylesheet"/>
+    </head>
+    <body class="transaction-page" id="top">
+        <nav class="navbar navbar-expand-lg calix-navbar sticky-top navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="calix_landing_page.html">
+                    <img alt="CALIX Glass and Aluminum Fabrication" class="calix-logo" src="../Assets/Logo1.png"/>
+                </a>
+                <button aria-controls="calixNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#calixNavbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="calixNavbar">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="calix_landing_page.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
+                        <li class="nav-item ms-lg-2"><a class="nav-link quote-nav-link" href="QuoteRequest.html">Get a quote</a></li>
+                        <li class="nav-item"><a class="nav-link login-nav-link" href="LoginPage.html">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="transaction-main">
+            <div class="container">
+                <div class="transaction-heading mb-4 mb-lg-5">
+                    <p class="page-kicker">CALIX TRANSACTION</p>
+                    <div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3">
+                        <div>
+                            <h1 class="page-heading">Track your project.</h1>
+                            <p class="page-intro mb-0">Follow your quotation from review through payment, order confirmation, fabrication, installation, and completion.</p>
+                        </div>
+                        <div class="transaction-reference-box">
+                            <span>Reference</span>
+                            <strong id="transactionReference">—</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transaction-empty" id="transactionEmpty" hidden>
+                    <h2>Transaction not found.</h2>
+                    <p>Open a submitted quotation from your profile or use the tracking link shown after requesting a quote.</p>
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
+                        <a class="btn btn-calix-action" href="QuoteRequest.html">Open quote list</a>
+                        <a class="btn btn-outline-secondary" href="Profile.html">View profile</a>
+                    </div>
+                </div>
+
+                <div id="transactionContent" hidden>
+                    <section aria-label="Transaction progress" class="transaction-progress-card mb-4">
+                        <div class="transaction-status-head">
+                            <div>
+                                <span class="transaction-status-label">Current status</span>
+                                <h2 id="transactionStatus">Pending Review</h2>
+                            </div>
+                            <span class="transaction-status-badge" id="transactionStatusBadge">Pending Review</span>
+                        </div>
+                        <ol class="transaction-timeline" id="transactionTimeline"></ol>
+                    </section>
+
+                    <div class="row g-4 align-items-start">
+                        <div class="col-xl-7">
+                            <section class="transaction-card mb-4" aria-labelledby="quoteSummaryHeading">
+                                <div class="transaction-card-heading">
+                                    <div>
+                                        <p class="transaction-card-kicker">Quotation</p>
+                                        <h2 id="quoteSummaryHeading">Project summary</h2>
+                                    </div>
+                                    <span class="transaction-date" id="transactionCreatedAt"></span>
+                                </div>
+                                <div id="transactionItems" class="transaction-items"></div>
+                                <div class="transaction-price-summary">
+                                    <div>
+                                        <span>Planning estimate</span>
+                                        <strong id="transactionEstimate">—</strong>
+                                    </div>
+                                    <div>
+                                        <span>Approved quotation</span>
+                                        <strong id="transactionApprovedTotal">Pending review</strong>
+                                    </div>
+                                    <p>Planning estimates are not final. The approved quotation may vary per contract agreement, final measurements, materials, hardware, and installation conditions.</p>
+                                </div>
+                            </section>
+
+                            <section class="transaction-card" aria-labelledby="projectDetailsHeading">
+                                <div class="transaction-card-heading">
+                                    <div>
+                                        <p class="transaction-card-kicker">Project</p>
+                                        <h2 id="projectDetailsHeading">Customer &amp; site details</h2>
+                                    </div>
+                                </div>
+                                <dl class="transaction-details-grid" id="transactionProjectDetails"></dl>
+                            </section>
+                        </div>
+
+                        <div class="col-xl-5">
+                            <section class="transaction-card payment-card mb-4" id="paymentSection" aria-labelledby="paymentHeading">
+                                <div class="transaction-card-heading">
+                                    <div>
+                                        <p class="transaction-card-kicker">Payment</p>
+                                        <h2 id="paymentHeading">Payment status</h2>
+                                    </div>
+                                </div>
+                                <p class="payment-prototype-note">This frontend prototype records manual payment submission only. It does not charge a card or transfer money online.</p>
+                                <div id="paymentLocked" class="transaction-locked-state">
+                                    <strong>Payment opens after quotation approval.</strong>
+                                    <p>CALIX first reviews measurements, specifications, materials, and project requirements before a final amount is approved.</p>
+                                </div>
+                                <div id="paymentContent" hidden>
+                                    <div class="payment-amount-panel">
+                                        <span>Required payment / deposit</span>
+                                        <strong id="requiredPaymentAmount">—</strong>
+                                        <small id="approvedPaymentNote">Final payment terms follow the approved quotation.</small>
+                                    </div>
+
+                                    <div id="paymentSubmittedState" class="payment-submitted-state" hidden></div>
+
+                                    <form id="paymentForm" novalidate>
+                                        <fieldset>
+                                            <legend>Choose payment method</legend>
+                                            <div class="payment-methods">
+                                                <label class="payment-method-card">
+                                                    <input checked name="paymentMethod" type="radio" value="GCash"/>
+                                                    <span><strong>GCash</strong><small>Submit your payment reference and proof.</small></span>
+                                                </label>
+                                                <label class="payment-method-card">
+                                                    <input name="paymentMethod" type="radio" value="Bank Transfer"/>
+                                                    <span><strong>Bank Transfer</strong><small>Submit your transfer reference and proof.</small></span>
+                                                </label>
+                                                <label class="payment-method-card">
+                                                    <input name="paymentMethod" type="radio" value="Cash / On-site"/>
+                                                    <span><strong>Cash / On-site</strong><small>Payment verification is recorded after receipt.</small></span>
+                                                </label>
+                                            </div>
+                                        </fieldset>
+
+                                        <div id="digitalPaymentFields">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="paymentReference">Payment / transaction reference</label>
+                                                <input class="form-control" id="paymentReference" maxlength="80" placeholder="Enter the payment reference" type="text"/>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="paymentProof">Proof of payment</label>
+                                                <input accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" class="form-control" id="paymentProof" type="file"/>
+                                                <p class="form-help mt-2 mb-0">PDF, JPG, or PNG up to 1.5 MB for this front-end prototype.</p>
+                                                <div class="permit-preview" id="paymentProofPreview"></div>
+                                            </div>
+                                        </div>
+
+                                        <p class="transaction-form-error" id="paymentFormError" role="alert" aria-live="polite"></p>
+                                        <button class="btn btn-calix-action w-100" type="submit">Submit payment for verification</button>
+                                    </form>
+                                </div>
+                            </section>
+
+                            <section class="transaction-card order-confirmation-card mb-4" id="orderConfirmation" hidden aria-labelledby="orderConfirmationHeading">
+                                <div class="order-confirmation-mark" aria-hidden="true">✓</div>
+                                <p class="transaction-card-kicker">Order confirmation</p>
+                                <h2 id="orderConfirmationHeading">Order confirmed.</h2>
+                                <p>Your payment has been verified and the project has moved into the order workflow.</p>
+                                <div class="order-reference-block">
+                                    <span>Order reference</span>
+                                    <strong id="orderReference">—</strong>
+                                </div>
+                            </section>
+
+                            <section class="transaction-card prototype-controls" aria-labelledby="prototypeControlsHeading">
+                                <button class="prototype-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#prototypeControlsBody" aria-expanded="false" aria-controls="prototypeControlsBody">
+                                    <span>
+                                        <small>Frontend demonstration only</small>
+                                        <strong id="prototypeControlsHeading">Prototype staff controls</strong>
+                                    </span>
+                                    <span aria-hidden="true">+</span>
+                                </button>
+                                <div class="collapse" id="prototypeControlsBody">
+                                    <div class="prototype-controls-body">
+                                        <p>These controls simulate the CALIX staff/backend actions that would normally happen in an authenticated admin system.</p>
+                                        <div id="prototypeApprovalControls">
+                                            <label class="form-label" for="prototypeApprovedTotal">Approved quotation total</label>
+                                            <input class="form-control mb-3" id="prototypeApprovedTotal" min="0" step="100" type="number"/>
+                                            <label class="form-label" for="prototypeDeposit">Required payment / deposit</label>
+                                            <input class="form-control mb-3" id="prototypeDeposit" min="0" step="100" type="number"/>
+                                            <button class="btn btn-outline-secondary w-100" id="prototypeApproveQuote" type="button">Approve quotation</button>
+                                        </div>
+                                        <div id="prototypePaymentControls" hidden>
+                                            <button class="btn btn-outline-secondary w-100" id="prototypeVerifyPayment" type="button">Verify payment &amp; confirm order</button>
+                                        </div>
+                                        <div id="prototypeOrderControls" hidden>
+                                            <label class="form-label" for="prototypeOrderStatus">Advance order status</label>
+                                            <select class="form-select mb-3" id="prototypeOrderStatus">
+                                                <option value="Processing">Processing</option>
+                                                <option value="Installation Scheduled">Installation Scheduled</option>
+                                                <option value="Completed">Completed</option>
+                                            </select>
+                                            <button class="btn btn-outline-secondary w-100" id="prototypeUpdateOrderStatus" type="button">Update order status</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="calix-footer" id="contact">
+            <div class="footer-container">
+                <div class="footer-heading">
+                    <p>HAVE A PROJECT IN MIND?</p>
+                    <h2>Let's build a<br/><span>better view.</span></h2>
+                </div>
+                <div class="row g-3 footer-contact-cards">
+                    <div class="col-md-4"><div class="footer-card h-100"><div aria-hidden="true" class="footer-icon">⌖</div><h3>Visit us</h3><p>11 Nile St. Victoriaville Homes,<br/>Antipolo City, Philippines</p></div></div>
+                    <div class="col-md-4"><div class="footer-card h-100"><div aria-hidden="true" class="footer-icon">☎</div><h3>Call CALIX</h3><p>+63 921 397 2042</p></div></div>
+                    <div class="col-md-4"><div class="footer-card h-100"><div aria-hidden="true" class="footer-icon">✉</div><h3>Email CALIX</h3><p>weng_paeldon@yahoo.com</p></div></div>
+                </div>
+                <div class="footer-middle">
+                    <div class="footer-social"><span>FOLLOW OUR WORK</span><div class="footer-social-links"><a href="https://www.facebook.com/calixglass" rel="noopener noreferrer" target="_blank">Facebook ↗</a><a href="https://www.instagram.com/calix.fabrication/" rel="noopener noreferrer" target="_blank">Instagram ↗</a></div></div>
+                    <a class="footer-top-link" href="#top">Back to top ↑</a>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-logo"><img alt="CALIX Glass and Aluminum Fabrication" src="../Assets/Logo1.png"/></div>
+                    <p class="footer-copyright">© 2026 CALIX Glass and Aluminum Fabrication. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../Functions/app.js"></script>
+        <script src="../Functions/transaction.js"></script>
+        <script src="../Functions/ux.js"></script>
+    </body>
+</html>

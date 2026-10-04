@@ -1,0 +1,77 @@
+.products-opening {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: productsOpening 1.8s ease-out forwards;
+}
+
+.products-text {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: productsText linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+.products-row {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: productsRow linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+.products-footer {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: productsFooter linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes productsOpening {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes productsText {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes productsRow {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes productsFooter {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
